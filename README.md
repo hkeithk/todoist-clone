@@ -1,3 +1,8 @@
+Design decisions:
+
+1. Thought about using Material-ui since I am familiar, but I think it will be better to learn how to build some custom components and learn how they work.
+   I've done a few interviews where it was requested that we build certain components such as a multi select dropdown etc...
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
