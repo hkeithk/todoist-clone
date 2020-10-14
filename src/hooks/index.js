@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { firebase } from 'firebase';
-import { collatedTasksExist } from 'lib';
+import db from 'services/firebase';
+import collatedTasksExists from 'lib';
 import moment from 'moment';
 
 export const useTasks = (selectedProject) => {
@@ -8,15 +8,15 @@ export const useTasks = (selectedProject) => {
   const [archivedTasks, setArchivedTasks] = useState([]);
 
   useEffect(() => {
-    let unsubscribe = firebase.firestore().collection('tasks').where('userId', '==', 'fewaf23io423ferw9f0');
+    let unsubscribe = db.collection('tasks').where('userId', '==', 'fewaf23io423ferw9f0');
 
     unsubscribe =
-      selectedProject && !collatedTasksExist(selectedProject)
-        ? (unsubscribe = unsubscribed.where('projectId', '==', selectedProject))
+      selectedProject && !collatedTasksExists(selectedProject)
+        ? (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
         : selectedProject === 'TODAY'
         ? (unsubscribe = unsubscribe.where('date', '==', moment().format('DD/MM/YYY')))
         : selectedProject === 'INBOX' || selectedProject === 0
-        ? unsubscribe == unsubscribe.where('date', '==', '')
+        ? unsubscribe === unsubscribe.where('date', '==', '')
         : unsubscribe;
 
     unsubscribe = unsubscribe.onSnapshot((snapshot) => {
@@ -35,10 +35,10 @@ export const useTasks = (selectedProject) => {
           : newTasks.filter((task) => task.archived !== true),
       );
 
-      setArchivedTasks(newTask.filter((task) => task.archived !== false));
+      setArchivedTasks(newTasks.filter((task) => task.archived !== false));
     });
 
-    return () => unsubscribed();
+    return () => unsubscribe();
   }, [selectedProject]);
 
   return { tasks, archivedTasks };
@@ -48,15 +48,13 @@ export const useProjects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    firebase
-      .firestore()
-      .collection('projects')
+    db.collection('projects')
       .where('userId', '==', 'fewaf23io423ferw9f0')
       .orderBy('projectId')
       .get()
       .then((snapshot) => {
         const allProjects = snapshot.docs.map((project) => ({
-          ...product.data(),
+          ...project.data(),
           docId: project.id,
         }));
 

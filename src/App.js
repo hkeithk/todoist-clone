@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from 'components/Header';
 import Sidebar from 'components/Sidebar';
+import Tasks from 'components/Tasks';
 
 export const App = () => {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <Header />
+      <section className='App-header'>
         <Sidebar />
-      </header>
+        <Tasks />
+      </section>
     </div>
   );
 };

@@ -1,7 +1,24 @@
 Design decisions:
 
-1. Thought about using Material-ui since I am familiar, but I think it will be better to learn how to build some custom components and learn how they work.
-   I've done a few interviews where it was requested that we build certain components such as a multi select dropdown etc...
+1. First decided not to go with MUI but decided against it. I would prefer to spend more time working on functional parts of Js and React and not CSS/HTML.
+
+High level plan:
+
+1. Build the Appbar first, only functionality for now is "Quick Add task (top right)", Side drawer, and home button.
+2. Build the sidebar/ MUI drawer. Drawer should use List and ListItems and not tabs.
+3. Start with build the inbox, today and upcoming high level components separately, no need for task items yet, just layout
+4. Create the task component now, should have:
+   - radio button, dont need to be exact, could change in future
+   - Onclick should bring up a dialog with just the title, no subtasks but can have a section for comments. .
+     - should have a button (dont need schedule component yet), maybe just a simple dropdown selector
+     - should have a button to change project
+5. create the add task button that goes under inbox, should have scheduler and projects button with default inbox
+
+Nice to haves (future):
+
+1. Have a sort by date and sort by name functionality.
+2. Implement the "Board view" that allows for drag and drop functionality.
+3. Dark/light modes?
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

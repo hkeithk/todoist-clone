@@ -1,5 +1,6 @@
-export const collatedTasksExist = [
-  { key: 'INBOX', name: 'Inbox' },
-  { key: 'TODAY', name: 'Today' },
-  { key: 'NEXT_7', name: 'Next 7 Days' },
-];
+import collatedTasks from 'constants/index';
+
+export const collatedTasksExists = (selectedProject) =>
+  collatedTasks.find((task) => task.key === selectedProject);
+
+export default collatedTasksExists;
