@@ -16,9 +16,11 @@ High level plan:
 
 Nice to haves (future):
 
+1. Subtasks? Would need to implement a collapsible component if there are subtasks
+   - probably would store subtasks in an array of objects, or just an array of taskId's. This approach would mean I'd need to store all tasks with a hasSubTask value
 1. Have a sort by date and sort by name functionality.
-2. Implement the "Board view" that allows for drag and drop functionality.
-3. Dark/light modes?
+1. Implement the "Board view" that allows for drag and drop functionality.
+1. Dark/light modes?
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
