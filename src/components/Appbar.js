@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, TextField, Toolbar, IconButton, InputBase, makeStyles, fade } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, InputBase, makeStyles, fade } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import 'components/Appbar.css';
@@ -49,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
 
 export const Appbar = () => {
   const classes = useStyles();
-
   const [sideBarOpen, setSideBarOpen] = useState(false);
 
   const handleSideBar = () => {
     setSideBarOpen(!sideBarOpen);
   };
+  console.log(sideBarOpen);
 
   return (
     <>
