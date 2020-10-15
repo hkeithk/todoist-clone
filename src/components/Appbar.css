@@ -1,0 +1,19 @@
+.container {
+  display: 'flex';
+  flex-direction: 'row';
+}
+
+.left-control {
+  /* margin-top: 10px; */
+  margin: 10px 0px 0px 10px;
+  display: 'flex';
+  /* flex-grow: 1; */
+}
+
+.right-control {
+  margin-left: 10px;
+}
+
+.container-searchbar {
+  flex-grow: 1;
+}

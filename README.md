@@ -2,6 +2,15 @@ Design decisions:
 
 1. First decided not to go with MUI but decided against it. I would prefer to spend more time working on functional parts of Js and React and not CSS/HTML.
 
+2. I want to use a mix of styled-components and material-ui's built in styling (which is really similar), mostly so that I have access to alot of documentation that can help me build the application.
+
+   -Styled components isnt great at managing the flow/positioning of the page so I'll stick with plain css with BEM methodology (learning it).
+   -For my own reference:
+
+   1. BEM- Block(standalone Entity that is meaningful)
+   2. Element(part of a block that has no standalone meaning and semantically tied to block)
+   3. Modifier(flag on a block or element, use to change appearance or behavior)
+
 High level plan:
 
 1. Build the Appbar first, only functionality for now is "Quick Add task (top right)", Side drawer, and home button.
