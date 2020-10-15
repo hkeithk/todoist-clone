@@ -1,6 +1,13 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
+  overrides: {
+    MuiCheckbox: {
+      root: {
+        color: '#ffffff',
+      },
+    },
+  },
   palette: {
     primary: {
       light: '#363636',
@@ -9,10 +16,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#fafafa',
       light: '#c0c0c0', //white
-      dark: '#171717',
     },
     background: {
-      default: '#ecf5ff',
+      default: '#171717',
     },
     text: {
       primary: '#ffffff',

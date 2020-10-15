@@ -1,5 +1,7 @@
-import firebase from 'firebase/app';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
+// TODO: move to .env in the future and change keys
 const firebaseConfig = {
   apiKey: 'AIzaSyCfvfKOsMCRI76WNci03TazggzQsHJl8QY',
   authDomain: 'todoist-clone-b732b.firebaseapp.com',
