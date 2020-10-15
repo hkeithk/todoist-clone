@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppBar, TextField, Toolbar, IconButton, InputBase, makeStyles, fade } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import 'components/Appbar.css';
+import Sidebar from 'components/Sidebar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    zIndex: theme.zIndex.drawer + 1,
   },
   search: {
     position: 'relative',
@@ -47,11 +49,18 @@ const useStyles = makeStyles((theme) => ({
 
 export const Appbar = () => {
   const classes = useStyles();
+
+  const [sideBarOpen, setSideBarOpen] = useState(false);
+
+  const handleSideBar = () => {
+    setSideBarOpen(!sideBarOpen);
+  };
+
   return (
-    <div>
+    <>
       <AppBar position='static' className={classes.root}>
-        <Toolbar color='primary'>
-          <IconButton edge='start' color='inherit'>
+        <Toolbar color='primary' className={classes.root}>
+          <IconButton edge='start' color='inherit' onClick={handleSideBar}>
             <FontAwesomeIcon icon={faBars} size='lg' />
           </IconButton>
           <IconButton color='inherit'>
@@ -70,7 +79,8 @@ export const Appbar = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-    </div>
+      <Sidebar open={sideBarOpen} />
+    </>
   );
 };
 
