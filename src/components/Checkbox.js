@@ -7,11 +7,7 @@ export const Checkbox = (id) => {
     db.collection('tasks').doc(id).update({ archived: true });
   };
 
-  return (
-    <div>
-      <MuiCheckbox onClick={() => archiveTask()} />
-    </div>
-  );
+  return <MuiCheckbox onClick={() => archiveTask()} />;
 };
 
 export default Checkbox;

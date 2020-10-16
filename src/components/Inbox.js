@@ -1,17 +1,12 @@
 import React from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
-import Tasks from 'components/Tasks';
+import { Typography } from '@material-ui/core';
+import Task from 'components/Task';
 import { useTasks } from 'hooks';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    background: '#171717',
-  },
-}));
 
 export const Inbox = () => {
   const { tasks } = useTasks('1');
-  let projectName = '';
+  // let projectName = '';
+  // console.log(tasks);
 
   {
     /* <div>
@@ -30,7 +25,9 @@ export const Inbox = () => {
         <Typography variant='h4' color='inherit'>
           Inbox
         </Typography>
-        <Tasks />
+        {tasks.map((task) => (
+          <Task text={task.task} taskId={task.id} key={task.id} />
+        ))}
       </div>
     </>
   );
