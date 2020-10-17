@@ -7,6 +7,12 @@ const theme = createMuiTheme({
         color: '#ffffff',
       },
     },
+    MuiDialog: {
+      scrollPaper: {
+        alignItems: 'baseline',
+        marginTop: '150px',
+      },
+    },
   },
   palette: {
     primary: {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Checkbox from 'components/Checkbox';
-import { List, ListItemText, ListItem, makeStyles, Dialog, DialogContent } from '@material-ui/core';
+import { List, ListItemText, ListItem, makeStyles } from '@material-ui/core';
 import TaskModal from 'components/TaskModal';
 import { useProjects } from 'hooks';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'flex-row',

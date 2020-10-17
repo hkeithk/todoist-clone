@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, InputBase, makeStyles, fade } from '@material-ui/core';
 import 'components/Appbar.css';
 import Sidebar from 'components/Sidebar';
+import QuickAdd from 'components/QuickAdd';
 import { VscHome } from 'react-icons/vsc';
 import { AiOutlineMenu, AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai';
-import { RiSearchLine } from 'react-icons/ri';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,9 +50,18 @@ const useStyles = makeStyles((theme) => ({
 export const Appbar = () => {
   const classes = useStyles();
   const [sideBarOpen, setSideBarOpen] = useState(true);
+  const [quickAddState, setQuickAddState] = useState(false);
 
   const handleSideBar = () => {
     setSideBarOpen(!sideBarOpen);
+  };
+
+  const openQuickAdd = () => {
+    setQuickAddState(true);
+  };
+
+  const closeQuickAdd = () => {
+    setQuickAddState(false);
   };
 
   return (
@@ -73,12 +82,13 @@ export const Appbar = () => {
           </div>
           <div className={classes.root} />
 
-          <IconButton color='inherit' edge='end'>
+          <IconButton color='inherit' edge='end' onClick={() => openQuickAdd()}>
             <AiOutlinePlus />
           </IconButton>
         </Toolbar>
       </AppBar>
       <Sidebar open={sideBarOpen} />
+      <QuickAdd handleClose={closeQuickAdd} modalState={quickAddState} />
     </>
   );
 };

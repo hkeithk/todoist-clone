@@ -9,9 +9,7 @@ import {
   fade,
   CssBaseline,
 } from '@material-ui/core';
-import { faInbox, faCalendarAlt, faCalendarTimes } from '@fortawesome/free-solid-svg-icons';
 import Main from 'components/Main';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { VscInbox } from 'react-icons/vsc';
 import { AiOutlineCalendar } from 'react-icons/ai';
