@@ -13,15 +13,20 @@ Design decisions:
 
 High level plan:
 
-1. Build the Appbar first, only functionality for now is "Quick Add task (top right)", Side drawer, and home button.
-2. Build the sidebar/ MUI drawer. Drawer should use List and ListItems and not tabs.
-3. Start with build the inbox, today and upcoming high level components separately, no need for task items yet, just layout
-4. Create the task component now, should have:
+Done:
+
+- Build the Appbar first, only functionality for now is "Quick Add task (top right)", Side drawer, and home button.
+- Build the sidebar/ MUI drawer. Drawer should use List and ListItems and not tabs.
+- Start with build the inbox, today and upcoming high level components separately, no need for task items yet, just layout
+
+Todo:
+
+1. Create the task component now, should have:
    - radio button, dont need to be exact, could change in future
    - Onclick should bring up a dialog with just the title, no subtasks but can have a section for comments. .
      - should have a button (dont need schedule component yet), maybe just a simple dropdown selector
      - should have a button to change project
-5. create the add task button that goes under inbox, should have scheduler and projects button with default inbox
+2. create the add task button that goes under inbox, should have scheduler and projects button with default inbox
 
 Nice to haves (future):
 

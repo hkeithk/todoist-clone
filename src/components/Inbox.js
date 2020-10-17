@@ -1,32 +1,29 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
 import Task from 'components/Task';
+import { Typography, Divider, makeStyles, Box } from '@material-ui/core';
 import { useTasks } from 'hooks';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: '#363636',
+  },
+}));
 
 export const Inbox = () => {
   const { tasks } = useTasks('1');
-  // let projectName = '';
-  // console.log(tasks);
-
-  {
-    /* <div>
-        {tasks.map((task) => (
-          <li key={`${task.id}`}>
-            <Checkbox id={task.id} />
-            <span> {task.task}</span>
-          </li>
-        ))}
-      </div> */
-  }
+  const styles = useStyles();
 
   return (
     <>
       <div>
-        <Typography variant='h4' color='inherit'>
-          Inbox
+        <Typography variant='h5' color='inherit'>
+          <Box fontWeight='fontWeightBold'>Inbox</Box>
         </Typography>
         {tasks.map((task) => (
-          <Task text={task.task} taskId={task.id} key={task.id} />
+          <>
+            <Task task={task} taskId={task.taskId} key={task.taskId} />
+            <Divider light={true} variant='middle' className={styles.root} />
+          </>
         ))}
       </div>
     </>
