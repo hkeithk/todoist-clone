@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, InputBase, makeStyles, fade } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import 'components/Appbar.css';
 import Sidebar from 'components/Sidebar';
+import { VscHome } from 'react-icons/vsc';
+import { AiOutlineMenu, AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai';
+import { RiSearchLine } from 'react-icons/ri';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,21 +60,21 @@ export const Appbar = () => {
       <AppBar position='static' className={classes.root}>
         <Toolbar color='primary' className={classes.root}>
           <IconButton edge='start' color='inherit' onClick={handleSideBar}>
-            <FontAwesomeIcon icon={faBars} size='lg' />
+            <AiOutlineMenu />
           </IconButton>
           <IconButton color='inherit'>
-            <FontAwesomeIcon icon={faHome} size='lg' />
+            <VscHome />
           </IconButton>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <FontAwesomeIcon icon={faSearch} />
+              <AiOutlineSearch />
             </div>
             <InputBase placeholder='Find' classes={{ root: classes.root, input: classes.inputInput }} />
           </div>
           <div className={classes.root} />
 
           <IconButton color='inherit' edge='end'>
-            <FontAwesomeIcon icon={faPlus} />
+            <AiOutlinePlus />
           </IconButton>
         </Toolbar>
       </AppBar>

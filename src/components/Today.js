@@ -1,11 +1,13 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 
 export const Today = () => {
   return (
     <>
       <div>
-        <Typography variant='h4'> Today</Typography>
+        <Typography variant='h5' color='inherit'>
+          <Box fontWeight='fontWeightBold'>Today</Box>
+        </Typography>
       </div>
     </>
   );

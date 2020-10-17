@@ -13,6 +13,9 @@ import { faInbox, faCalendarAlt, faCalendarTimes } from '@fortawesome/free-solid
 import Main from 'components/Main';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
+import { VscInbox } from 'react-icons/vsc';
+import { AiOutlineCalendar } from 'react-icons/ai';
+import { RiCalendar2Line } from 'react-icons/ri';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,8 +86,8 @@ export const Sidebar = (props) => {
               className={classes.button}
               onClick={() => handleTabChange('inbox')}
             >
-              <ListItemIcon color='inherit'>
-                <FontAwesomeIcon icon={faInbox} size='lg' />
+              <ListItemIcon color='inherit' fontSize='large' style={{ color: '#5297ff', fontSize: 20 }}>
+                <VscInbox />
               </ListItemIcon>
               <ListItemText>Inbox</ListItemText>
             </ListItem>
@@ -94,8 +97,8 @@ export const Sidebar = (props) => {
               className={classes.button}
               onClick={() => handleTabChange('today')}
             >
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faCalendarTimes} size='lg' />
+              <ListItemIcon style={{ color: '#25b84c', fontSize: 20 }}>
+                <AiOutlineCalendar />
               </ListItemIcon>
               <ListItemText>Today</ListItemText>
             </ListItem>
@@ -105,8 +108,8 @@ export const Sidebar = (props) => {
               className={classes.button}
               onClick={() => handleTabChange('upcoming')}
             >
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faCalendarAlt} size='lg' />
+              <ListItemIcon style={{ color: '#a970ff', fontSize: 20 }}>
+                <RiCalendar2Line />
               </ListItemIcon>
               <ListItemText>Upcoming</ListItemText>
             </ListItem>
