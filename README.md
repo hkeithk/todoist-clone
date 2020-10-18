@@ -11,6 +11,8 @@ Design decisions:
    2. Element(part of a block that has no standalone meaning and semantically tied to block)
    3. Modifier(flag on a block or element, use to change appearance or behavior)
 
+3. Using React Context instead of Redux, mostly because this is a simple App using firebase. If I built the entire todo-ist app with all its functionality I probably want to use relational db with Redux
+
 High level plan:
 
 Done:

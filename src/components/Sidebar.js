@@ -14,6 +14,7 @@ import clsx from 'clsx';
 import { VscInbox } from 'react-icons/vsc';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { RiCalendar2Line } from 'react-icons/ri';
+import { useSelectedProjectValue } from 'context';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,8 +60,10 @@ export const Sidebar = (props) => {
   const classes = useStyles();
 
   const { open } = props;
-
+  const { setSelectedProject } = useSelectedProjectValue;
+  const [active, setActive] = useState('inbox');
   const [selectedTab, setSelectedTab] = useState('inbox');
+  const [showProjects, setShowProjects] = useState(true);
 
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
@@ -113,7 +116,10 @@ export const Sidebar = (props) => {
             </ListItem>
           </List>
         </div>
+
+        {/* ADD DROPDOWN AND PROJECTS COMPONENT HERE */}
       </Drawer>
+
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
