@@ -1,17 +1,10 @@
 import React from 'react';
 import Task from 'components/Task';
-import { Typography, Divider, makeStyles, Box } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import { useTasks } from 'hooks';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: '#363636',
-  },
-}));
 
 export const Inbox = () => {
   const { tasks } = useTasks('1');
-  const styles = useStyles();
 
   return (
     <>
@@ -19,11 +12,11 @@ export const Inbox = () => {
         <Typography variant='h5' color='inherit'>
           <Box fontWeight='fontWeightBold'>Inbox</Box>
         </Typography>
-        {tasks.map((task) => (
-          <>
-            <Task task={task} taskId={task.taskId} key={task.taskId} />
-            <Divider light={true} variant='middle' className={styles.root} />
-          </>
+        {/* using index not the most ideal way but solved the console err for now */}
+        {tasks.map((task, index) => (
+          <React.Fragment key={index}>
+            <Task task={task} taskId={task.taskId} />
+          </React.Fragment>
         ))}
       </div>
     </>

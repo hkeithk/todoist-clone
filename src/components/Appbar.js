@@ -4,7 +4,8 @@ import 'components/Appbar.css';
 import Sidebar from 'components/Sidebar';
 import QuickAdd from 'components/QuickAdd';
 import { VscHome } from 'react-icons/vsc';
-import { AiOutlineMenu, AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
+import { HiOutlinePlus } from 'react-icons/hi';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,7 +84,7 @@ export const Appbar = () => {
           <div className={classes.root} />
 
           <IconButton color='inherit' edge='end' onClick={() => openQuickAdd()}>
-            <AiOutlinePlus />
+            <HiOutlinePlus />
           </IconButton>
         </Toolbar>
       </AppBar>

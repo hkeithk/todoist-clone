@@ -10,6 +10,7 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 import Main from 'components/Main';
+import Projects from 'components/Projects';
 import clsx from 'clsx';
 import { VscInbox } from 'react-icons/vsc';
 import { AiOutlineCalendar } from 'react-icons/ai';
@@ -60,7 +61,7 @@ export const Sidebar = (props) => {
   const classes = useStyles();
 
   const { open } = props;
-  const { setSelectedProject } = useSelectedProjectValue;
+  const { setSelectedProject } = useSelectedProjectValue();
   const [active, setActive] = useState('inbox');
   const [selectedTab, setSelectedTab] = useState('inbox');
   const [showProjects, setShowProjects] = useState(true);
@@ -118,6 +119,7 @@ export const Sidebar = (props) => {
         </div>
 
         {/* ADD DROPDOWN AND PROJECTS COMPONENT HERE */}
+        <div>{/* <Projects /> */}</div>
       </Drawer>
 
       <main

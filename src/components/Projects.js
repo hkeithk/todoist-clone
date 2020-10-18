@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { setSelectedProject, useProjectsValue } from 'context';
+import { setSelectedProject, useProjectsValue, useSelectedProjectValue } from 'context';
+import { ListItem } from '@material-ui/core';
 
 export const Projects = ({ activeValue = null }) => {
   const [active, setActive] = useState(activeValue);
@@ -10,6 +11,8 @@ export const Projects = ({ activeValue = null }) => {
     setActive(projectId);
     setSelectedProject(projectId);
   };
+
+  console.log(projects);
 
   //add a dropdown that will display the projects depending on if its active or not
   return (
