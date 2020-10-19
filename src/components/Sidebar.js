@@ -8,6 +8,10 @@ import {
   makeStyles,
   fade,
   CssBaseline,
+  Accordion,
+  Typography,
+  AccordionSummary,
+  AccordionDetails,
 } from '@material-ui/core';
 import Main from 'components/Main';
 import Projects from 'components/Projects';
@@ -117,9 +121,14 @@ export const Sidebar = (props) => {
             </ListItem>
           </List>
         </div>
-
-        {/* ADD DROPDOWN AND PROJECTS COMPONENT HERE */}
-        <div>{/* <Projects /> */}</div>
+        <Accordion>
+          <AccordionSummary id='panel' expandIcon={}>
+            <Typography>Projects</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>I am projects</Typography>
+          </AccordionDetails>
+        </Accordion>
       </Drawer>
 
       <main
