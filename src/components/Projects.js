@@ -21,8 +21,10 @@ export const Projects = ({ activeValue = null }) => {
       <ListItem
         key={project.projectId}
         data-doc-id={project.docId}
-        data-testid=' project-action'
-        onClick={() => onClickHandler(project.projectId)}
+        onClick={() => {
+          setActive(project.projectId);
+          setSelectedProject(project.projectId);
+        }}
       >
         I am a project
       </ListItem>

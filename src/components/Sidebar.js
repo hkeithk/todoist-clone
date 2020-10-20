@@ -17,7 +17,7 @@ import Main from 'components/Main';
 import Projects from 'components/Projects';
 import clsx from 'clsx';
 import { VscInbox } from 'react-icons/vsc';
-import { AiOutlineCalendar } from 'react-icons/ai';
+import { AiOutlineCalendar, AiOutlineDown } from 'react-icons/ai';
 import { RiCalendar2Line } from 'react-icons/ri';
 import { useSelectedProjectValue } from 'context';
 
@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerContainer: {
     overflow: 'auto',
+  },
+  projects: {
+    background: '#363636',
   },
   button: {
     '&:hover': {
@@ -121,13 +124,11 @@ export const Sidebar = (props) => {
             </ListItem>
           </List>
         </div>
-        <Accordion>
-          <AccordionSummary id='panel' expandIcon={}>
-            <Typography>Projects</Typography>
+        <Accordion className={classes.projects} square={true}>
+          <AccordionSummary id='panel' expandIcon={<AiOutlineDown />}>
+            <Typography>{showProjects && <Projects />}</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>I am projects</Typography>
-          </AccordionDetails>
+          <AccordionDetails>{showProjects && <Projects />}</AccordionDetails>
         </Accordion>
       </Drawer>
 
